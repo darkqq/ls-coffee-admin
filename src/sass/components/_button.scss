@@ -1,0 +1,72 @@
+$component: btn;
+
+$btn-padding-y: $spacer * 0.625;
+$btn-padding-x: $spacer * 3.125;
+
+$btn-padding-y-sm: $spacer * 0.325;
+$btn-padding-x-sm: $spacer * 2.688;
+
+$btn-sizes: (
+		"lg": (
+				"padding": $btn-padding-y $btn-padding-x,
+		),
+		"sm": (
+				"padding": $btn-padding-y-sm $btn-padding-x-sm,
+		),
+);
+
+$btn-variants: (
+		"default": (
+				"border": 2px solid $color-brown,
+				"border-hover": 2px solid $color-middle-brown,
+				"color": $color-brown,
+				"color-hover": $color-middle-brown,
+				"bg-color": $color-white,
+				"bg-hover": $color-white,
+		),
+		"brown": (
+				"border": 2px solid $color-brown,
+				"border-hover": 2px solid $color-middle-brown,
+				"color": $color-white,
+				"color-hover": $color-white,
+				"bg-color": $color-brown,
+				"bg-color-hover": $color-middle-brown,
+		),
+
+);
+
+.#{$component} {
+	outline: 0;
+	background-color: transparent;
+	border: none;
+	border-radius: $btn-border-radius;
+
+	display: inline-flex;
+	align-items: center;
+	padding: $btn-padding-y $btn-padding-x;
+
+	color: $color-brown;
+	font-size: $font-text;
+	cursor: pointer;
+
+	transition: border .3s ease, background .3s ease, color .3s ease;
+
+	@each $name, $styles in $btn-sizes {
+		&-#{$name} {
+			padding: map-get($styles, "padding");
+		}
+	}
+
+	@each $name, $styles in $btn-variants {
+		&-#{$name} {
+			color: map-get($styles, "color");
+			background: map-get($styles, "bg-color");
+			border: map-get($styles, "border");
+			&:hover {
+				color: map-get($styles, "color-hover");
+				background: map-get($styles, "bg-color-hover");
+				border: map-get($styles, "border-hover");
+			}
+		}
+	}
+}

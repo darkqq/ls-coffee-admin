@@ -1,0 +1,13 @@
+import React from 'react';
+
+const IconTraining = () => {
+	return (
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M6 8.75H18V14.75H6V8.75Z" fill="#5A3511"/>
+			<path d="M21 5H3C2.5875 5 2.25 5.3375 2.25 5.75V17.75C2.25 18.1625 2.57344 18.5 2.99062 18.5H21C21.4125 18.5 21.75 18.1625 21.75 17.75V5.75C21.75 5.3375 21.4125 5 21 5ZM19.5 16.25H4.5V7.25H19.5V16.25ZM3.75 22.25H6.42188L7.47656 19.25H4.83281L3.75 22.25ZM13.0969 2.75H10.9031L10.3641 4.25H13.6359L13.0969 2.75ZM17.5781 22.25H20.25L19.1719 19.25H16.5234L17.5781 22.25ZM10.875 19.25H13.125V20.75H10.875V19.25Z" fill="currentColor"/>
+		</svg>
+
+	);
+};
+
+export default IconTraining;

@@ -1,0 +1,40 @@
+$component: menu-item;
+
+$menu-item-padding-x: $spacer * 0.625;
+$menu-item-padding-y: $spacer * 1.125;
+
+$menu-item-variant: (
+		"default": (
+				"color": $color-middle-brown,
+				"background": $color-white,
+		),
+		"active": (
+				"color": $color-brown,
+				"background": $color-brown-opacity,
+		),
+);
+
+.#{$component} {
+	display: flex;
+	align-items: center;
+	gap: 27px;
+	max-width: 243px;
+
+	font-weight: $font-medium;
+	font-size: $font-text;
+	line-height: 18px;
+	letter-spacing: 0.1125px;
+
+	cursor: pointer;
+
+	border-radius: 4px;
+	padding: $menu-item-padding-x $menu-item-padding-y;
+
+	@each $name, $styles in $menu-item-variant {
+		&-#{$name} {
+			color: map-get($styles, "color");
+			background: map-get($styles, "background");
+		}
+	}
+
+}
